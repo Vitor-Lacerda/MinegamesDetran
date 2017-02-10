@@ -5,6 +5,7 @@ public class CarroMeioFio : MonoBehaviour {
 
 	bool _arrastando = false;
 	bool _posicionado = true;
+	public bool _direcaoAleatoria = false;
 
 	Vector2 _posicaoInicialArraste;
 
@@ -12,7 +13,13 @@ public class CarroMeioFio : MonoBehaviour {
 
 	MinigameEstacionamentoMeioFio _minigame;
 
-	void Start(){
+	void Awake(){
+		if (_direcaoAleatoria) {
+			if (Random.Range (0, 10) > 5) {
+				_distancia = -_distancia;
+			}
+		}
+		_distancia += Mathf.Sign (_distancia) * 0.1f * Configs.FASE;
 		_minigame = GetComponentInParent<MinigameEstacionamentoMeioFio> ();
 	}
 
@@ -32,7 +39,7 @@ public class CarroMeioFio : MonoBehaviour {
 	}
 
 	public void Afastar(){
-		transform.localPosition -= Vector3.right;
+		transform.localPosition -= Vector3.right * _distancia;
 		_posicionado = false;
 	}
 

@@ -26,6 +26,7 @@ public class CarroAbrirCaminho : MonoBehaviour {
 	}
 
 	IEnumerator SairDoCaminho(){
+		
 		float acumulador = 0;
 		float acumuladorDistancia = 0;
 		float multi = (-_direcao) * _velocidadeAngular;

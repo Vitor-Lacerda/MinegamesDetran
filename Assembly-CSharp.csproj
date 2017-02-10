@@ -49,6 +49,9 @@
      <Compile Include="Assets\QRCodeAssets\QrCodeGenerator.cs" />
      <Compile Include="Assets\Resources\Scripts\Behaviours\AbrirCaminho\AmbulanciaAbrirCaminho.cs" />
      <Compile Include="Assets\Resources\Scripts\Behaviours\AbrirCaminho\CarroAbrirCaminho.cs" />
+     <Compile Include="Assets\Resources\Scripts\Behaviours\Buracos\CarroBuracos.cs" />
+     <Compile Include="Assets\Resources\Scripts\Behaviours\Buracos\CriadorBuracos.cs" />
+     <Compile Include="Assets\Resources\Scripts\Behaviours\Capacete.cs" />
      <Compile Include="Assets\Resources\Scripts\Behaviours\CarrosMeioFio\CarroMeioFio.cs" />
      <Compile Include="Assets\Resources\Scripts\Behaviours\Ciclista\CarroMiniCiclista.cs" />
      <Compile Include="Assets\Resources\Scripts\Behaviours\Ciclista\CriadorPista.cs" />
@@ -59,11 +62,15 @@
      <Compile Include="Assets\Resources\Scripts\Behaviours\Percurso\Percurso.cs" />
      <Compile Include="Assets\Resources\Scripts\Behaviours\Percurso\PontoPercurso.cs" />
      <Compile Include="Assets\Resources\Scripts\Behaviours\Shaking.cs" />
+     <Compile Include="Assets\Resources\Scripts\Behaviours\Sujeira.cs" />
+     <Compile Include="Assets\Resources\Scripts\Behaviours\Volante\CarroVolante.cs" />
+     <Compile Include="Assets\Resources\Scripts\Behaviours\Volante\Volante.cs" />
      <Compile Include="Assets\Resources\Scripts\Managers\GUIManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Managers\StartManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Minigames\Minigame.cs" />
      <Compile Include="Assets\Resources\Scripts\Minigames\MinigameAbrirCaminho.cs" />
+     <Compile Include="Assets\Resources\Scripts\Minigames\MinigameBuracos.cs" />
      <Compile Include="Assets\Resources\Scripts\Minigames\MinigameCiclista.cs" />
      <Compile Include="Assets\Resources\Scripts\Minigames\MinigameCinto.cs" />
      <Compile Include="Assets\Resources\Scripts\Minigames\MinigameEsperar.cs" />
@@ -71,6 +78,9 @@
      <Compile Include="Assets\Resources\Scripts\Minigames\MinigameMacaco.cs" />
      <Compile Include="Assets\Resources\Scripts\Minigames\MinigamePercurso.cs" />
      <Compile Include="Assets\Resources\Scripts\Minigames\MinigamePlaca.cs" />
+     <Compile Include="Assets\Resources\Scripts\Minigames\MinigameSujeira.cs" />
+     <Compile Include="Assets\Resources\Scripts\Minigames\MinigameTriangulo.cs" />
+     <Compile Include="Assets\Resources\Scripts\Minigames\MinigameVolante.cs" />
      <Compile Include="Assets\Resources\Scripts\Misc\SocialMedia.cs" />
      <Compile Include="Assets\Resources\Scripts\Statics\Configs.cs" />
      <Compile Include="Assets\Resources\Scripts\Utils\Connection\ConnectionManager.cs" />
@@ -81,6 +91,8 @@
      <Compile Include="Assets\Resources\Scripts\Utils\Security\CodFloat.cs" />
      <Compile Include="Assets\Resources\Scripts\Utils\Security\CodInt.cs" />
      <Compile Include="Assets\Resources\Scripts\Utils\Security\TesteCod.cs" />
+     <None Include="Assets\Teste\Retrovisor.shader" />
+     <None Include="Assets\Teste\DuasTexturas.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity543/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

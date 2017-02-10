@@ -45,7 +45,7 @@ public class Minigame : MonoBehaviour {
 		_textSubtitulo.gameObject.SetActive (true);
 
 
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (Configs.TEMPOESPERAPADRAO);
 
 		_textTitulo.gameObject.SetActive (false);
 		_textSubtitulo.gameObject.SetActive (false);

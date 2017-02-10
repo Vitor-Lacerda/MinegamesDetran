@@ -7,7 +7,13 @@ public class MinigamePercurso : Minigame {
 	public CarroPercurso _carro;
 
 	void Start(){
-		_percursos [0].SetActive (true);
+		int i = Configs.FASE;
+		if (i >= _percursos.Length) {
+			i = _percursos.Length - 1;
+		}
+
+
+		_percursos [i].SetActive (true);
 	}
 
 	protected override void AcabarTempo ()
@@ -22,7 +28,7 @@ public class MinigamePercurso : Minigame {
 
 	protected override IEnumerator RotinaDerrota ()
 	{
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (Configs.TEMPOESPERAPADRAO);
 		yield return base.RotinaDerrota ();
 	}
 

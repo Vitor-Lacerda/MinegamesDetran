@@ -10,6 +10,7 @@ public class Cinto : MonoBehaviour {
 	public Transform _terceiroPonto;
 	public MinigameCinto _minigame;
 
+
 	Vector3 _posInicial;
 	Vector3 _posInicialWorld;
 	bool _arrastando = false;
@@ -23,7 +24,9 @@ public class Cinto : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		_lineRenderer.SetPositions (new Vector3[]{ _posInicialWorld,transform.position, _terceiroPonto.position });
+		if (_lineRenderer != null) {
+			_lineRenderer.SetPositions (new Vector3[]{ _posInicialWorld, transform.position, _terceiroPonto.position });
+		}
 
 		if (_fechado)
 			return;
@@ -47,7 +50,7 @@ public class Cinto : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		if (col.transform == _encaixe) {
+		if (col.transform == _encaixe && _arrastando) {
 			transform.position = _encaixe.position;
 			_fechado = true;
 			_minigame.ContarCinto ();

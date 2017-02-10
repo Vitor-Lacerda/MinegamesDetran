@@ -8,6 +8,8 @@ public class CriadorPista : MonoBehaviour {
 
 	public GameObject _prefabPista;
 	public float _yOffset = 32.5f;
+	public bool _rodando;
+	Minigame _minigame;
 
 
 
@@ -16,6 +18,7 @@ public class CriadorPista : MonoBehaviour {
 	GameObject _pistaMaisLonge;
 	// Use this for initialization
 	void Start () {
+		_minigame = transform.parent.GetComponent<Minigame> ();
 		_listaPistas = new List<GameObject> ();
 		foreach (Pista p in transform.GetComponentsInChildren<Pista>(true)) {
 			_listaPistas.Add (p.gameObject);
@@ -23,6 +26,10 @@ public class CriadorPista : MonoBehaviour {
 
 		_pistaMaisLonge = _listaPistas.OrderByDescending (p => p.transform.position.y).First ();
 	
+	}
+
+	void Update(){
+		_rodando = _minigame._rodando;
 	}
 
 	protected GameObject CriarOuAcharObjeto(){
@@ -45,7 +52,7 @@ public class CriadorPista : MonoBehaviour {
 
 	}
 	
-	public void CriarNovaPista(){
+	public virtual void CriarNovaPista(){
 		GameObject novaPista = CriarOuAcharObjeto();
 		novaPista.transform.parent = this.transform;
 		novaPista.transform.localPosition = new Vector2 (_pistaMaisLonge.transform.localPosition.x, _pistaMaisLonge.transform.localPosition.y + _yOffset);

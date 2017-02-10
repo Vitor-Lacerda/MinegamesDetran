@@ -53,7 +53,6 @@ public class UserService : MonoBehaviour
 
 	public void SetHighScore (int score)
 	{
-		
 		if(highscore == null){
 			highscore = new CodInt(0);			
 		}
@@ -80,7 +79,7 @@ public class UserService : MonoBehaviour
 	public IEnumerator sendScore ()
 	{
 
-		string json = "{\"gameName\": \"nomejogo\", \"highscore\": " + highscore.Valor + ", \"metaData\": \"\", \"user\": {\"userName\": \"" + userName + "\", \"userEmail\": \"" + userEmail + "\"} }";
+		string json = "{\"gameName\": \"Minigames\", \"highscore\": " + highscore.Valor + ", \"metaData\": \"\", \"user\": {\"userName\": \"" + userName + "\", \"userEmail\": \"" + userEmail + "\"} }";
 		Dictionary<string, string> hash = new Dictionary<string, string> ();
 		hash ["Content-Type"] = "application/json";
 		

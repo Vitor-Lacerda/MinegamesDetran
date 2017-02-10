@@ -5,7 +5,7 @@ using System;
 public class LogManager : MonoBehaviour {
 
 	public void ShowLog(string userEmail){
-		string s = PlayerPrefs.GetString ("VilaEmpreendedor" + userEmail, "");
+		string s = PlayerPrefs.GetString (Configs.PLAYERPREFSKEY + "Log" + userEmail, "");
 		if (string.IsNullOrEmpty (s)) {
 			s ="Log Vazio"; 
 		} 
@@ -16,7 +16,7 @@ public class LogManager : MonoBehaviour {
 	}
 	
 	void AddToLog(string s, string userEmail){
-		string prev = PlayerPrefs.GetString ("VilaEmpreendedor" + userEmail, "");
+		string prev = PlayerPrefs.GetString (Configs.PLAYERPREFSKEY + "Log" + userEmail, "");
 		string[] entries = prev.Split ('%');
 		if (entries.Length > 80) {
 			prev = "";
@@ -25,7 +25,7 @@ public class LogManager : MonoBehaviour {
 			}
 		}
 		prev += s;
-		PlayerPrefs.SetString ("VilaEmpreendedor" + userEmail, prev);
+		PlayerPrefs.SetString (Configs.PLAYERPREFSKEY + "Log" + userEmail, prev);
 	}
 	
 	public string BuildLogString(string sent, string received, string error, string userEmail){

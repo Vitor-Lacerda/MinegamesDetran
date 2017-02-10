@@ -51,7 +51,7 @@ public class MinigameEsperar : Minigame {
 
 		_imagemDerrota.SetActive (true);
 
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (Configs.TEMPOESPERAPADRAO);
 
 		yield return base.RotinaDerrota ();
 	}

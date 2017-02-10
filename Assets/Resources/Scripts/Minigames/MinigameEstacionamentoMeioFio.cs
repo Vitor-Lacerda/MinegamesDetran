@@ -43,7 +43,7 @@ public class MinigameEstacionamentoMeioFio : Minigame {
 	protected override IEnumerator RotinaVitoria ()
 	{
 		_imagemVitoria.SetActive (true);
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (Configs.TEMPOESPERAPADRAO);
 
 		yield return base.RotinaVitoria ();
 	}
@@ -51,7 +51,7 @@ public class MinigameEstacionamentoMeioFio : Minigame {
 	protected override IEnumerator RotinaDerrota ()
 	{
 		_imagemDerrota.SetActive (true);
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (Configs.TEMPOESPERAPADRAO);
 
 		yield return base.RotinaDerrota ();
 	}

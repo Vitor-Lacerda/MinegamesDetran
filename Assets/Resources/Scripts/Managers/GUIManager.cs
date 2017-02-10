@@ -5,26 +5,43 @@ using UnityEngine.UI;
 public class GUIManager : MonoBehaviour {
 
 	public RectTransform _timeSlider;
+	Image _timeSliderImage;
+
 
 	public GameObject _telaPontuacao;
 	public Text _textoPontuacao;
 	public Image[] _imagensChances;
 
 	public GameObject _telaGameOver;
+	public Text _textoScoreFinal;
+	public Text _textoHighscore;
 
 	public GameObject _telaMaisRapido;
+
+
+
+	void Awake(){
+		_timeSliderImage = _timeSlider.GetComponent<Image> ();
+
+	}
 
 	public void SetTimeSlider(float fracao){
 		Vector2 temp = _timeSlider.localScale;
 		temp.x= fracao;
 		_timeSlider.localScale = temp;
+		Color tempColor = _timeSliderImage.color;
+		tempColor.g = fracao;
+		tempColor.b = fracao;
+		_timeSliderImage.color = tempColor;
 	}
 
 	public void MostrarTelaPontuacao(bool b){
 		_telaPontuacao.SetActive(b);
 	}
 
-	public void MostrarTelaGameOver(bool b){
+	public void MostrarTelaGameOver(bool b, int score, int highscore){
+		_textoScoreFinal.text = score.ToString();
+		_textoHighscore.text = highscore.ToString ();
 		_telaGameOver.SetActive (b);
 	}
 

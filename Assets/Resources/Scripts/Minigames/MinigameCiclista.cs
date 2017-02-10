@@ -51,7 +51,7 @@ public class MinigameCiclista : Minigame {
 
 		_rodando = false;
 		_imagemVitoria.SetActive (true);
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (Configs.TEMPOESPERAPADRAO);
 
 		yield return base.RotinaVitoria ();
 	}
@@ -62,7 +62,7 @@ public class MinigameCiclista : Minigame {
 		_textoMulta.text = _infracao;
 		_imagemMulta.SetActive (true);
 
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (Configs.TEMPOESPERAPADRAO);
 
 
 		yield return base.RotinaDerrota ();
